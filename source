@@ -1,3 +1,13 @@
+/*
+* Description: Based off the highway number the user enters it will display if the given highway is: 
+* 1. An interstate or not. 
+* 2. If it is not an interstate, it will prompt it as an auxiliary highway and which interstate it supports.
+* 
+* Author: Tyler Scotti
+*/
+
+
+
 #include <iostream>
 #include <string>
 #include <cctype>
