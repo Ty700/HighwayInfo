@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+   //Variable Declaration
+   int highwayNumber;
+      
+   // User input
+   cout << "Enter in a highway number: ";
+   cin >> highwayNumber; 
+   
+   int highwayEvenOrOdd = highwayNumber % 2; // Even/Odd check 
+   
+   //Logic
+   //Aux Highway 
+   if(highwayNumber >= 100){ 
+      int servingInterstate = highwayNumber % 100; //Gathers last two digits of highwayNumber if highwayNumber is >= 100
+   
+   //If servingInterstate = 00, not a valid entry, thus terminates program.
+   if(servingInterstate == 0){
+      cout << highwayNumber << " is not a valid interstate highway number." << endl; 
+   
+   //If servingInterstate doesn't equal 0, it continues
+   
+   //Even - supported interstate runs east/west
+   } else if(highwayEvenOrOdd == 0){ 
+      cout << "I-" << highwayNumber << " is auxiliary, serving I-" << servingInterstate << ", going east/west." << endl;
+   //If not even, then must be odd, thus north/south   
+      } else { 
+         cout << "I-" << highwayNumber << " is auxiliary, serving I-" << servingInterstate << ", going north/south." << endl;
+      }
+   // If highwayNumber is less than 100 but greater than or equal to 1, then it is an Interstate Highway
+   } else if ((highwayNumber >= 1) && (highwayNumber <= 99)){ 
+      if(highwayEvenOrOdd == 0){
+         //if Highway # is even, then it goes east and west 
+         cout << "I-" << highwayNumber << " is primary, going east/west." << endl;            
+      } else {
+         //if Highway # is odd, then it goes North and South 
+         cout << "I-" << highwayNumber << " is primary, going north/south." << endl;
+      }
+   // Default case: Not a valid entry
+   } else {
+      cout << highwayNumber << " is not a valid interstate highway number." << endl;
+   }
+   return 0;
+}
