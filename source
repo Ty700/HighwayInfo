@@ -5,7 +5,7 @@
 * 3. If it is not an interstate, it will provide which interstate the auxillary highway supports 
 * and which direction that interstate runs.
 * 4. It makes sure the highway number is a valid number to be considered a highway. 
-5. Lastly, it will make sure the interstate the auxillary highway supporst is a valid interstate.
+* 5. Lastly, it will make sure the interstate the auxillary highway supporst is a valid interstate.
 * Author: Tyler Scotti
 */
 
