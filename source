@@ -18,21 +18,22 @@
 using namespace std;
 
 int main() {
-   //Variable Declaration
+//Variable Declaration
    int highwayNumber;
       
-   // User input
+// User input
    cout << "Enter in a highway number: ";
    cin >> highwayNumber; 
+// Even/Odd check
+   int highwayEvenOrOdd = highwayNumber % 2;  
    
-   int highwayEvenOrOdd = highwayNumber % 2; // Even/Odd check 
-   
-   //Logic
-   //Aux Highway 
+//Logic
+
+//Aux Highway check
    if(highwayNumber >= 100){ 
       int servingInterstate = highwayNumber % 100; //Gathers last two digits of highwayNumber if highwayNumber is >= 100
    
-   //If servingInterstate = 00, not a valid entry, thus terminates program.
+   //If servingInterstate = 00, not a valid entry, thus ends program.
    if(servingInterstate == 0){
       cout << highwayNumber << " is not a valid interstate highway number." << endl; 
    
@@ -45,7 +46,8 @@ int main() {
       } else { 
          cout << "I-" << highwayNumber << " is auxiliary, serving I-" << servingInterstate << ", going north/south." << endl;
       }
-   // If highwayNumber is less than 100 but greater than or equal to 1, then it is an Interstate Highway
+      
+// Interstate Highway check
    } else if ((highwayNumber >= 1) && (highwayNumber <= 99)){ 
       if(highwayEvenOrOdd == 0){
          //if Highway # is even, then it goes east and west 
@@ -54,7 +56,7 @@ int main() {
          //if Highway # is odd, then it goes North and South 
          cout << "I-" << highwayNumber << " is primary, going north/south." << endl;
       }
-   // Default case: Not a valid entry
+// Default case: Not a valid entry
    } else {
       cout << highwayNumber << " is not a valid interstate highway number." << endl;
    }
